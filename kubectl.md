@@ -41,3 +41,8 @@ gcloud container clusters get-credentials annotation-cluster --zone asia-southea
   
 kubectl create namespace <namespace name>
 ```
+
+#### Create Secrets from File
+```
+kubectl create secret generic ssl-certificates  --from-file=./src/conf.d/ssl -n web-secret --dry-run -o yaml
+```
