@@ -27,3 +27,7 @@ gcloud beta compute --project=<PROJECT_NAME> instances create redis-client-vm \
 --boot-disk-size=10GB --boot-disk-type=pd-ssd --boot-disk-device-name=redis-client-vm \
 --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --reservation-affinity=any
 ```
+## SSH into a VM
+```
+gcloud beta compute ssh --zone "us-central1-a" <INSTANCE_NAME> --tunnel-through-iap --project <PROJECT_NAME>
+```
