@@ -30,4 +30,12 @@ gcloud beta compute --project=<PROJECT_NAME> instances create redis-client-vm \
 ## SSH into a VM
 ```
 gcloud beta compute ssh --zone "us-central1-a" <INSTANCE_NAME> --tunnel-through-iap --project <PROJECT_NAME>
+
 ```
+## cURL in a loop
+```
+for ((i=1;i<=100;i++)); do   curl -I  "www.airasia.com"; done  
+```
+
+## Port Forward in Kubernetes Cluster
+https://kubectl.docs.kubernetes.io/pages/container_debugging/port_forward_to_pods.html
