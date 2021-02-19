@@ -39,3 +39,11 @@ for ((i=1;i<=100;i++)); do   curl -I  "www.airasia.com"; done
 
 ## Port Forward in Kubernetes Cluster
 https://kubectl.docs.kubernetes.io/pages/container_debugging/port_forward_to_pods.html
+
+
+# CPU Core and Thread Information
+```bash
+sysctl -n machdep.cpu.brand_string
+sysctl -n machdep.cpu.core_count
+sysctl -n machdep.cpu.thread_count
+```
