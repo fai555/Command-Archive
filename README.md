@@ -41,7 +41,7 @@ for ((i=1;i<=100;i++)); do   curl -I  "www.airasia.com"; done
 https://kubectl.docs.kubernetes.io/pages/container_debugging/port_forward_to_pods.html
 
 
-# CPU Core and Thread Information
+# CPU Core and Thread Information [Link](https://www.quora.com/How-do-you-know-how-many-threads-per-core-a-processor-has)
 ```bash
 sysctl -n machdep.cpu.brand_string
 sysctl -n machdep.cpu.core_count
