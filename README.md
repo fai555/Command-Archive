@@ -34,7 +34,7 @@ gcloud beta compute ssh --zone "us-central1-a" <INSTANCE_NAME> --tunnel-through-
 ```
 ## cURL in a loop
 ```
-for ((i=1;i<=100;i++)); do   curl -I  "www.airasia.com"; done  
+for ((i=1;i<=100;i++)); do   curl -I  "www.google.com"; done  
 ```
 
 ## Port Forward in Kubernetes Cluster
