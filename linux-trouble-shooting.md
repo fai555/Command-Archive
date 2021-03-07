@@ -19,3 +19,16 @@ du -hi
 du -a
 du -h /path/to/folder #show disk
 ```
+
+# Show user identity
+```bash
+id
+
+# or
+
+whoami
+```
+# Substitute user identity
+```bash
+su - USER_NAME
+```
