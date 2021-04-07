@@ -47,3 +47,8 @@ sysctl -n machdep.cpu.brand_string
 sysctl -n machdep.cpu.core_count
 sysctl -n machdep.cpu.thread_count
 ```
+
+# Redis Ping
+```bash
+(printf "PING\r\n"; sleep 1) | nc localhost 8080
+```
