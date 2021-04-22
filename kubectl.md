@@ -1,5 +1,5 @@
 # Rolling Update
-```
+```bash
 kubectl set image deployment/frontend www=image:v2               # Rolling update "www" containers of "frontend" deployment, updating the image
 kubectl rollout history deployment/frontend                      # Check the history of deployments including the revision 
 kubectl rollout undo deployment/frontend                         # Rollback to the previous deployment
@@ -26,7 +26,7 @@ kubectl autoscale deployment foo --min=2 --max=10                # Auto scale a 
 ```
 
 
-```
+```sh
 kubectl top pod memory-demo --namespace=mem-example
 kubectl get pod memory-demo-2 --output=yaml --namespace=mem-example
 
@@ -43,6 +43,21 @@ kubectl create namespace <namespace name>
 ```
 
 #### Create Secrets from File
-```
+```sh
 kubectl create secret generic ssl-certificates  --from-file=./src/conf.d/ssl -n web-secret --dry-run -o yaml
+```
+
+# Create backup for all the configs
+Switch to the namespace which you want to backup. Then run the following command.
+
+```sh
+for OBJ in $(kubectl api-resources --verbs=list --namespaced -o name)
+do
+   for DEF in $(kubectl get --show-kind --ignore-not-found $OBJ -o name)
+   do
+      mkdir -p $(dirname $DEF)
+      kubectl get $DEF -o yaml \
+      | yq eval 'del(.metadata.resourceVersion, .metadata.uid, .metadata.annotations, .metadata.creationTimestamp, .metadata.selfLink, .metadata.managedFields)' - > $DEF.yaml
+   done
+done
 ```
