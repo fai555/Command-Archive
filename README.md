@@ -116,3 +116,12 @@ sysctl -n machdep.cpu.thread_count
 ```bash
 (printf "PING\r\n"; sleep 1) | nc localhost 8080
 ```
+
+# SSL Debug
+Install the debug tool http://macappstore.org/gnutls/
+
+Get the details of a certificate
+```bash
+gnutls-cli <DOMAIN_NAME>
+```
+
