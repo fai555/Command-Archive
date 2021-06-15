@@ -124,4 +124,7 @@ Get the details of a certificate
 ```bash
 gnutls-cli <DOMAIN_NAME>
 ```
-
+# Check which version of SSL/TLS are supported
+```bash
+nmap --script ssl-enum-ciphers -p 443 google.com
+```
