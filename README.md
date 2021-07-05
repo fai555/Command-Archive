@@ -128,3 +128,12 @@ gnutls-cli <DOMAIN_NAME>
 ```bash
 nmap --script ssl-enum-ciphers -p 443 google.com
 ```
+
+# Kill a process running in a certain port
+```bash
+lsof -i:9090
+```
+Get the PID number and the kill with the below command
+```bash
+kill -9 PID
+```
