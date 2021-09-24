@@ -137,3 +137,10 @@ Get the PID number and the kill with the below command
 ```bash
 kill -9 PID
 ```
+
+# Delete Namespaces Stuck In Pending State
+```bash
+kubectl get namespace istio-system -o json > istio-system.json
+kubectl replace --raw "/api/v1/namespaces/istio-system/finalize" -f ./istio-system.json
+```
+
